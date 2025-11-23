@@ -1,0 +1,95 @@
+<!-- 
+
+useEffectEvent() => useEffect mai kuch issue the unn issue ko resolve krne ke liye iss hook ko banaya gaya hai
+
+// ------------ UseEffect Hook ------------- //
+
+Syntax :-  useEffect(setup, dependencies) 
+
+where, dependencies is the optional parameter
+
+const [name, setName] = useState("");
+const [count, setCount] = useState(0);
+
+useEffect(() => {
+    console.log("Hello!");
+});
+
+return (
+    <>
+        <h1>Component</h1>
+    </>
+)
+
+# useEffect ko 3 tarike se use krskte hai :-
+
+1). Run after every Render
+
+useEffect{() => {
+    console.log("Hello!");
+}};
+
+2). Run only once :- Agar state variable mai change bhi hota hai to bhi yhh only one time run hoga
+
+useEffect{() => {
+    console.log("Hello!");
+}, []};
+
+3). Run with dependency :- jab bhi only count state mai change hoga tabhi yhh automatically run hojayga
+
+useEffect{() => {
+    console.log("Hello!");
+}, [count]};
+
+// -------- useEffect with Cleanup function ------------- //
+
+*** Component LifeCycle in ReactJs :-
+
+1). Mount : phle bar jab component render hota hai tab
+
+useEffect{() => {
+    console.log("Hello!");
+}, []};
+
+2). update :- jab bhi component ki value mai change hoga to yh run hojayga
+
+useEffect{() => {
+    console.log("Hello!");
+}, [count]};
+
+3). UnMount :- component Function ko hatana work hone ke baad and dusre component ko working mai leke aana
+
+const [seconds, setSeconds] = useState(0);
+
+useEffect{() => {
+    const interval = setInterval(() => {
+        setSeconds((prev) => prev + 1);
+    },1000);
+
+    return () => {
+        clearInterval(interval);  // return function har baar run nahi hoga only unmount pr hi run hoga
+    };
+}, []}
+
+// ---------------- useEffectEvent Hook ----------------------- //
+
+Issue in useEffect => jab bhi hume humari variables ki value mai change krna hota hai to hum uske liye useEffect ka use krte hai and uske value mai change krskte hai setter function ki help se and use print bhi kara skte hai useEffect ke bahar but agar hum useEffect ke andar hi value ko print karake dekhe to vha old value or old props hi show karega updated nahi.
+
+const [count, setCount] = useState(0);
+
+useEffect(() => {
+    const id = setInterval(() => {
+        console.log("Tick:", count); -------=> show old count value this is the main problem
+        setCount(c => c+1);
+    },1000);
+
+    return () => clearInterval(id);
+}, []);
+
+
+return (
+    <div>
+        <h1>Count : {count} </h1> //  show updated count value (latest value)
+    </div>
+)
+-->

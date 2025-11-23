@@ -20,7 +20,7 @@ export default function MultiInputForm() {
             [name]: value // jo bhi change kr rahe hai uski updated value yaha print hojaygi
         }))
     }
-
+    
     return (
         <form onSubmit={handleSubmit}>
             <h2>MultiInput Form example</h2>

@@ -9,12 +9,12 @@ function App() {
   
   return (
     <>
-      {/* <Counter />
-      <ToggleText /> */}
+      {/* <Counter /> */}
+      {/* <ToggleText /> */}
       {/* <LikeButton /> */}
-      {/* <UserProfile /> */}
+      <UserProfile />
       {/* <Student /> */}
-      <InputExample />
+      {/* <InputExample /> */}
     </>
   )
 }
